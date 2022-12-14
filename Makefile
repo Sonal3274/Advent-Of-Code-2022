@@ -1,6 +1,6 @@
-.PHONY: all build clean format lint report test
+.PHONY: all build clean test run
 
-all: clean format lint test report
+all: build clean test
 
 build:
 	./gradlew build
@@ -8,15 +8,8 @@ build:
 clean:
 	./gradlew clean
 
-format:
-	./gradlew formatKotlin
-
-lint:
-	./gradlew detekt lintKotlin
-
-report:
-	./gradlew koverMergedReport
-
 test:
-	./gradlew solutions:test
+	./gradlew test
 
+run:
+	./gradlew run

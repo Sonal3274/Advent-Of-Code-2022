@@ -1,5 +1,12 @@
 package de.thermondo.advent2022.day01
 
+import java.io.BufferedReader
+import java.io.FileReader
+import java.nio.charset.Charset
+import java.nio.charset.StandardCharsets
+import java.nio.file.Files
+import java.nio.file.Paths
+
 
 /**
  * The jungle must be too overgrown and difficult to navigate in vehicles or access from the air; the Elves' expedition
@@ -17,6 +24,7 @@ package de.thermondo.advent2022.day01
  * 3000
  *
  * 4000
+ *
  * 5000
  * 6000
  *
@@ -41,16 +49,79 @@ package de.thermondo.advent2022.day01
  */
 
 fun main() {
-    elvesCalories()
+   // elvesCalories()
+    val listOfStrings: MutableList<String> = ArrayList()
+
+    // load data from file
+    val bf = BufferedReader(
+        FileReader("/Users/sonaldhage/Advent-Of-Code-2022/src/main/kotlin/de/thermondo/advent2022/day01/InputDay01.txt")
+    )
+/*
+    val txt = bf.read()
+    println(txt)*/
+    // read entire line as string
+    var line = bf.readLine()
+
+    // checking for end of file
+    while (line != null) {
+        listOfStrings.add(line)
+        line = bf.readLine()
+    }
+    listOfStrings.add("")
+    // closing bufferreader object
+    bf.close()
+
+    // storing the data in arraylist to array
+    val array = listOfStrings.toTypedArray()
+
+    val list: MutableList<Int> = mutableListOf()
+    var sum = 0
+
+    for (i in array) {
+       // println(i)
+
+        if (i == "") {
+           // println("Empty line\n")
+            list.add(sum)
+           // println(sum)
+            sum = 0
+            //println(list)
+        }
+        else {
+            sum += i.toInt()
+        }
+
+    }
+
+    val max = list.max()
+    println(max)
+
+
+    // printing each line of file
+    // which is stored in array
+  /*  for (str in array) {
+        println(str)
+    }*/
+
+
 }
 
-fun elvesCalories(){
-    val a = arrayOf(arrayOf(1000,2000,3000), arrayOf(4000,5000,6000), arrayOf(7000,8000,9000), arrayOf(10000))
+fun elvesCalories() {
+    val a = arrayOf(arrayOf(1000, 2000, 3000), arrayOf(4000, 5000, 6000), arrayOf(7000, 8000, 9000), arrayOf(10000))
+    var sum = 0
+    val list: MutableList<Int> = mutableListOf()
 
-    for(j in a) {
-        for (i in j ) {
-            println(i)
+    for (j in a) {
+        for (i in j) {
+            //  println(i)
+            sum += i
         }
-        println()
+//        println(sum)
+        list.add(sum)
+//        println(list)
+        sum = 0
+//        println()
     }
+    val max = list.max()
+    println(max)
 }

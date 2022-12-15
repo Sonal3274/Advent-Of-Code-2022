@@ -2,13 +2,8 @@ package de.thermondo.advent2022.day01
 
 import java.io.BufferedReader
 import java.io.FileReader
-import java.nio.charset.Charset
-import java.nio.charset.StandardCharsets
-import java.nio.file.Files
-import java.nio.file.Paths
 
-
-/**
+/*
  * The jungle must be too overgrown and difficult to navigate in vehicles or access from the air; the Elves' expedition
  * traditionally goes on foot. As your boats approach land, the Elves begin taking inventory of their supplies.
  * One important consideration is food - in particular, the number of Calories each Elf is carrying (your puzzle input).
@@ -49,16 +44,13 @@ import java.nio.file.Paths
  */
 
 fun main() {
-   // elvesCalories()
     val listOfStrings: MutableList<String> = ArrayList()
 
     // load data from file
     val bf = BufferedReader(
         FileReader("/Users/sonaldhage/Advent-Of-Code-2022/src/main/kotlin/de/thermondo/advent2022/day01/InputDay01.txt")
     )
-/*
-    val txt = bf.read()
-    println(txt)*/
+
     // read entire line as string
     var line = bf.readLine()
 
@@ -78,50 +70,20 @@ fun main() {
     var sum = 0
 
     for (i in array) {
-       // println(i)
+        // println(i)
 
         if (i == "") {
-           // println("Empty line\n")
+            // println("Empty line\n")
             list.add(sum)
-           // println(sum)
+            // println(sum)
             sum = 0
             //println(list)
-        }
-        else {
+        } else {
             sum += i.toInt()
         }
 
     }
 
-    val max = list.max()
-    println(max)
-
-
-    // printing each line of file
-    // which is stored in array
-  /*  for (str in array) {
-        println(str)
-    }*/
-
-
-}
-
-fun elvesCalories() {
-    val a = arrayOf(arrayOf(1000, 2000, 3000), arrayOf(4000, 5000, 6000), arrayOf(7000, 8000, 9000), arrayOf(10000))
-    var sum = 0
-    val list: MutableList<Int> = mutableListOf()
-
-    for (j in a) {
-        for (i in j) {
-            //  println(i)
-            sum += i
-        }
-//        println(sum)
-        list.add(sum)
-//        println(list)
-        sum = 0
-//        println()
-    }
     val max = list.max()
     println(max)
 }

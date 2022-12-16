@@ -21,7 +21,7 @@ fun main() {
 
     // load data from file
     val bf = BufferedReader(
-        FileReader("/Users/sonaldhage/Advent-Of-Code-2022/src/main/resources/advent2022/InputDay01.txt")
+        FileReader("src/main/resources/advent2022/InputDay01.txt")
     )
 
     // read entire line as string

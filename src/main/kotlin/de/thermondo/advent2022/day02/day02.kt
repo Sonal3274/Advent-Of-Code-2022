@@ -35,5 +35,28 @@ with a score of 1 (1 + 0).
 The third round is a draw with both players choosing Scissors, giving you a score of 3 + 3 = 6.
 In this example, if you were to follow the strategy guide, you would get a total score of 15 (8 + 1 + 6).
 
-What would your total score be if everything goes exactly according to your strategy guide?*/
+What would your total score be if everything goes exactly according to your strategy guide?
+*/
 
+fun main() {
+
+}
+
+fun rockPaperScissor(round1: String): String {
+
+    var result: String? = null
+    when (round1) {
+
+        "A Y" -> result = "Win"
+        "B Z" -> result = "Win"
+        "C X" -> result = "Win"
+        "A Z" -> result = "Loss"
+        "B X" -> result = "Loss"
+        "C Y" -> result = "Loss"
+        else -> { // Note the block
+            result = "Tie"
+        }
+    }
+    return result
+
+}

@@ -1,5 +1,4 @@
 package de.thermondo.advent2022.day01
-
 import java.io.BufferedReader
 import java.io.FileReader
 
@@ -48,7 +47,7 @@ fun main() {
 
     // load data from file
     val bf = BufferedReader(
-        FileReader("/Users/sonaldhage/Advent-Of-Code-2022/src/main/kotlin/de/thermondo/advent2022/day01/InputDay01.txt")
+        FileReader("src/main/resources/advent2022/InputDay01.txt")
     )
 
     // read entire line as string
@@ -77,11 +76,10 @@ fun main() {
             list.add(sum)
             // println(sum)
             sum = 0
-            //println(list)
+            // println(list)
         } else {
             sum += i.toInt()
         }
-
     }
 
     val max = list.max()

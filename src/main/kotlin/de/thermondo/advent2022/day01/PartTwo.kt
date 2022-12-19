@@ -21,7 +21,7 @@ fun main() {
 
     // load data from file
     val bf = BufferedReader(
-        FileReader("/Users/sonaldhage/Advent-Of-Code-2022/src/main/resources/advent2022/InputDay01.txt")
+        FileReader("src/main/resources/advent2022/InputDay01.txt")
     )
 
     // read entire line as string
@@ -49,14 +49,14 @@ fun main() {
         } else {
             sum += i.toInt()
         }
-
     }
     list.sortDescending()
     var count = 0
     var totalCalories = 0
+    @Suppress("MagicNumber")
     for (x in list) {
         if (count < 3) {
-           // println(x)
+            // println(x)
             totalCalories = totalCalories + x
             count++
         } else {
